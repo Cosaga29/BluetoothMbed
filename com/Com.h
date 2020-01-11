@@ -33,7 +33,8 @@ protected:
 public:
 
 	virtual bool Send(uint8_t* data, unsigned by_size, unsigned* bytes_sent = 0) = 0;
+	virtual bool TimedSend(float ms_delay, uint8_t* data, unsigned by_size, unsigned* bytes_sent = 0) = 0;
 	virtual Packet Receive(unsigned* bytes_received = 0) = 0;
-	virtual bool Init(Settings settings) = 0;
+	virtual bool Init(const std::string& comPortName, Settings settings) = 0;
 
 };
